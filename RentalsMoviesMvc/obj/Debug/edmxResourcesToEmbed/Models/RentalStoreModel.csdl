@@ -16,8 +16,181 @@
     <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
     <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
     <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="RentalStoreModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
   </EntityType>
   <EntityContainer Name="RentalStoreEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" />
+    <EntitySet Name="AspNetRoles" EntityType="RentalStoreModel.AspNetRoles" />
+    <EntitySet Name="AspNetUserClaims" EntityType="RentalStoreModel.AspNetUserClaims" />
+    <EntitySet Name="AspNetUserLogins" EntityType="RentalStoreModel.AspNetUserLogins" />
+    <EntitySet Name="AspNetUserRoles" EntityType="RentalStoreModel.AspNetUserRoles" />
+    <EntitySet Name="Customers" EntityType="RentalStoreModel.Customers" />
+    <EntitySet Name="MembershipTypes" EntityType="RentalStoreModel.MembershipTypes" />
+    <AssociationSet Name="FK_AspNetUserRoles_AspNetRoles_RoleId" Association="RentalStoreModel.FK_AspNetUserRoles_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="RentalStoreModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customers_MembershipTypes" Association="RentalStoreModel.FK_Customers_MembershipTypes">
+      <End Role="MembershipTypes" EntitySet="MembershipTypes" />
+      <End Role="Customers" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MembershipTypes_MembershipTypes" Association="RentalStoreModel.FK_MembershipTypes_MembershipTypes">
+      <End Role="MembershipTypes" EntitySet="MembershipTypes" />
+      <End Role="MembershipTypes1" EntitySet="MembershipTypes" />
+    </AssociationSet>
+    <EntitySet Name="Genres" EntityType="RentalStoreModel.Genres" />
+    <EntitySet Name="Movies" EntityType="RentalStoreModel.Movies" />
+    <AssociationSet Name="FK_Movies_Genres" Association="RentalStoreModel.FK_Movies_Genres">
+      <End Role="Genres" EntitySet="Genres" />
+      <End Role="Movies" EntitySet="Movies" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="450" FixedLength="false" Unicode="true" />
+    <Property Name="ConcurrencyStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="NormalizedName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUserRoles" Relationship="RentalStoreModel.FK_AspNetUserRoles_AspNetRoles_RoleId" FromRole="AspNetRoles" ToRole="AspNetUserRoles" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="450" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUsers" Relationship="RentalStoreModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="450" FixedLength="false" Unicode="true" />
+    <Property Name="RoleId" Type="String" Nullable="false" MaxLength="450" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetRoles" Relationship="RentalStoreModel.FK_AspNetUserRoles_AspNetRoles_RoleId" FromRole="AspNetUserRoles" ToRole="AspNetRoles" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MembershipTypeId" Type="Byte" Nullable="false" />
+    <Property Name="BirthDate" Type="DateTime" Precision="3" />
+    <Property Name="IsSubscribedToNewsletter" Type="Boolean" />
+    <NavigationProperty Name="MembershipTypes" Relationship="RentalStoreModel.FK_Customers_MembershipTypes" FromRole="Customers" ToRole="MembershipTypes" />
+  </EntityType>
+  <EntityType Name="MembershipTypes">
+    <Key>
+      <PropertyRef Name="MemberhipTypeId" />
+    </Key>
+    <Property Name="MemberhipTypeId" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MembershipType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Customers" Relationship="RentalStoreModel.FK_Customers_MembershipTypes" FromRole="MembershipTypes" ToRole="Customers" />
+    <NavigationProperty Name="MembershipTypes1" Relationship="RentalStoreModel.FK_MembershipTypes_MembershipTypes" FromRole="MembershipTypes" ToRole="MembershipTypes1" />
+    <NavigationProperty Name="MembershipTypes2" Relationship="RentalStoreModel.FK_MembershipTypes_MembershipTypes" FromRole="MembershipTypes1" ToRole="MembershipTypes" />
+  </EntityType>
+  <Association Name="FK_AspNetUserRoles_AspNetRoles_RoleId">
+    <End Type="RentalStoreModel.AspNetRoles" Role="AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="RentalStoreModel.AspNetUserRoles" Role="AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Type="RentalStoreModel.AspNetUsers" Role="AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="RentalStoreModel.AspNetUserLogins" Role="AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customers_MembershipTypes">
+    <End Type="RentalStoreModel.MembershipTypes" Role="MembershipTypes" Multiplicity="1" />
+    <End Type="RentalStoreModel.Customers" Role="Customers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MembershipTypes">
+        <PropertyRef Name="MemberhipTypeId" />
+      </Principal>
+      <Dependent Role="Customers">
+        <PropertyRef Name="MembershipTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MembershipTypes_MembershipTypes">
+    <End Type="RentalStoreModel.MembershipTypes" Role="MembershipTypes" Multiplicity="1" />
+    <End Type="RentalStoreModel.MembershipTypes" Role="MembershipTypes1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="MembershipTypes">
+        <PropertyRef Name="MemberhipTypeId" />
+      </Principal>
+      <Dependent Role="MembershipTypes1">
+        <PropertyRef Name="MemberhipTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Genres">
+    <Key>
+      <PropertyRef Name="GenreId" />
+    </Key>
+    <Property Name="GenreId" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Movies" Relationship="RentalStoreModel.FK_Movies_Genres" FromRole="Genres" ToRole="Movies" />
+  </EntityType>
+  <EntityType Name="Movies">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GenreId" Type="Byte" Nullable="false" />
+    <Property Name="ReleaseDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NumberInStock" Type="Byte" />
+    <Property Name="NumberAvailable" Type="Byte" />
+    <NavigationProperty Name="Genres" Relationship="RentalStoreModel.FK_Movies_Genres" FromRole="Movies" ToRole="Genres" />
+  </EntityType>
+  <Association Name="FK_Movies_Genres">
+    <End Type="RentalStoreModel.Genres" Role="Genres" Multiplicity="1" />
+    <End Type="RentalStoreModel.Movies" Role="Movies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genres">
+        <PropertyRef Name="GenreId" />
+      </Principal>
+      <Dependent Role="Movies">
+        <PropertyRef Name="GenreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
