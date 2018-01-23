@@ -6,6 +6,19 @@
     <edmx:Diagrams>
       <Diagram DiagramId="13aae856bd59423399c0e38a997d2716" Name="Diagram1" ZoomLevel="93">
         <EntityTypeShape EntityType="RentalStoreModel.AspNetUsers" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RentalStoreModel.AspNetRoles" Width="1.5" PointX="3.75" PointY="0.875" />
+        <EntityTypeShape EntityType="RentalStoreModel.AspNetUserClaims" Width="1.5" PointX="5.75" PointY="3.75" />
+        <EntityTypeShape EntityType="RentalStoreModel.AspNetUserLogins" Width="1.5" PointX="3.375" PointY="4.625" />
+        <EntityTypeShape EntityType="RentalStoreModel.AspNetUserRoles" Width="1.5" PointX="6" PointY="1.125" />
+        <EntityTypeShape EntityType="RentalStoreModel.Customers" Width="1.5" PointX="5.75" PointY="6.75" />
+        <EntityTypeShape EntityType="RentalStoreModel.MembershipTypes" Width="1.5" PointX="0.75" PointY="7.75" />
+        <AssociationConnector Association="RentalStoreModel.FK_AspNetUserRoles_AspNetRoles_RoleId" />
+        <AssociationConnector Association="RentalStoreModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="RentalStoreModel.FK_Customers_MembershipTypes" />
+        <AssociationConnector Association="RentalStoreModel.FK_MembershipTypes_MembershipTypes" />
+        <EntityTypeShape EntityType="RentalStoreModel.Genres" Width="1.5" PointX="8.375" PointY="1.375" />
+        <EntityTypeShape EntityType="RentalStoreModel.Movies" Width="1.5" PointX="10.625" PointY="1" />
+        <AssociationConnector Association="RentalStoreModel.FK_Movies_Genres" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -26,5 +26,13 @@ namespace RentalsMoviesMvc.Models
         }
     
         public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
+        public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
+        public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
+        public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
+        public virtual DbSet<AspNetUserRoles> AspNetUserRoles { get; set; }
+        public virtual DbSet<Customers> Customers { get; set; }
+        public virtual DbSet<MembershipTypes> MembershipTypes { get; set; }
+        public virtual DbSet<Genres> Genres { get; set; }
+        public virtual DbSet<Movies> Movies { get; set; }
     }
 }
