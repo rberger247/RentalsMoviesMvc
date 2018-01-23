@@ -33,7 +33,6 @@ C:\src\RentalsMoviesMvcSln\RentalsMoviesMvc\bin\System.Web.WebPages.Razor.dll
 C:\src\RentalsMoviesMvcSln\RentalsMoviesMvc\bin\WebGrease.dll
 C:\src\RentalsMoviesMvcSln\RentalsMoviesMvc\bin\Antlr3.Runtime.pdb
 C:\src\RentalsMoviesMvcSln\RentalsMoviesMvc\bin\AutoMapper.xml
-C:\src\RentalsMoviesMvcSln\RentalsMoviesMvc\bin\EntityFramework.xml
 C:\src\RentalsMoviesMvcSln\RentalsMoviesMvc\bin\EntityFramework.SqlServer.xml
 C:\src\RentalsMoviesMvcSln\RentalsMoviesMvc\bin\Microsoft.Owin.xml
 C:\src\RentalsMoviesMvcSln\RentalsMoviesMvc\bin\Microsoft.Owin.Host.SystemWeb.xml
