@@ -57,6 +57,6 @@ C:\src\RentalsMoviesMvcSln\RentalsMoviesMvc\bin\System.Web.WebPages.Razor.xml
 C:\src\RentalsMoviesMvcSln\RentalsMoviesMvc\bin\Microsoft.AspNet.Identity.Core.xml
 C:\src\RentalsMoviesMvcSln\RentalsMoviesMvc\bin\Microsoft.AspNet.Identity.Owin.xml
 C:\src\RentalsMoviesMvcSln\RentalsMoviesMvc\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\src\RentalsMoviesMvcSln\RentalsMoviesMvc\obj\Debug\RentalsMoviesMvc.csprojResolveAssemblyReference.cache
 C:\src\RentalsMoviesMvcSln\RentalsMoviesMvc\obj\Debug\RentalsMoviesMvc.dll
 C:\src\RentalsMoviesMvcSln\RentalsMoviesMvc\obj\Debug\RentalsMoviesMvc.pdb
+C:\src\RentalsMoviesMvcSln\RentalsMoviesMvc\obj\Debug\RentalsMoviesMvc.csprojResolveAssemblyReference.cache

@@ -87,6 +87,7 @@
     <Property Name="DateAdded" Type="datetime" Nullable="false" />
     <Property Name="NumberInStock" Type="tinyint" />
     <Property Name="NumberAvailable" Type="tinyint" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <Association Name="FK_AspNetUserRoles_AspNetRoles_RoleId">
     <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
