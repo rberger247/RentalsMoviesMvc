@@ -86,6 +86,7 @@
     <EntitySetMapping Name="Movies">
       <EntityTypeMapping TypeName="RentalStoreModel.Movies">
         <MappingFragment StoreEntitySet="Movies">
+          <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="NumberAvailable" ColumnName="NumberAvailable" />
           <ScalarProperty Name="NumberInStock" ColumnName="NumberInStock" />
           <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />

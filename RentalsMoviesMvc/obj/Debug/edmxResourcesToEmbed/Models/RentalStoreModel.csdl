@@ -180,6 +180,7 @@
     <Property Name="NumberInStock" Type="Byte" />
     <Property Name="NumberAvailable" Type="Byte" />
     <NavigationProperty Name="Genres" Relationship="RentalStoreModel.FK_Movies_Genres" FromRole="Movies" ToRole="Genres" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <Association Name="FK_Movies_Genres">
     <End Type="RentalStoreModel.Genres" Role="Genres" Multiplicity="1" />

@@ -20,6 +20,7 @@ namespace RentalsMoviesMvc.Models
         public System.DateTime DateAdded { get; set; }
         public Nullable<byte> NumberInStock { get; set; }
         public Nullable<byte> NumberAvailable { get; set; }
+        public string Name { get; set; }
     
         public virtual Genres Genres { get; set; }
     }

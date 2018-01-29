@@ -92,6 +92,7 @@
           <Property Name="DateAdded" Type="datetime" Nullable="false" />
           <Property Name="NumberInStock" Type="tinyint" />
           <Property Name="NumberAvailable" Type="tinyint" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <Association Name="FK_AspNetUserRoles_AspNetRoles_RoleId">
           <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
@@ -372,6 +373,7 @@
           <Property Name="NumberInStock" Type="Byte" />
           <Property Name="NumberAvailable" Type="Byte" />
           <NavigationProperty Name="Genres" Relationship="RentalStoreModel.FK_Movies_Genres" FromRole="Movies" ToRole="Genres" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_Movies_Genres">
           <End Type="RentalStoreModel.Genres" Role="Genres" Multiplicity="1" />
@@ -476,6 +478,7 @@
           <EntitySetMapping Name="Movies">
             <EntityTypeMapping TypeName="RentalStoreModel.Movies">
               <MappingFragment StoreEntitySet="Movies">
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="NumberAvailable" ColumnName="NumberAvailable" />
                 <ScalarProperty Name="NumberInStock" ColumnName="NumberInStock" />
                 <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />

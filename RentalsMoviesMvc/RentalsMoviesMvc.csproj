@@ -196,8 +196,10 @@
     <Compile Include="Controllers\Api\CustomersController.cs" />
     <Compile Include="Controllers\Api\MoviesController.cs" />
     <Compile Include="Controllers\Api\NewRentalsController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Dto\CustomerDto.cs" />
     <Compile Include="Dto\GenreDto.cs" />
     <Compile Include="Dto\MembershipTypeDto.cs" />
@@ -232,6 +234,7 @@
     <Compile Include="Models\MembershipTypes.cs">
       <DependentUpon>RentalStoreModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\MovieFormViewModel.cs" />
     <Compile Include="Models\Movies.cs">
       <DependentUpon>RentalStoreModel.tt</DependentUpon>
     </Compile>
@@ -580,9 +583,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Movies\MovieForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Customers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
