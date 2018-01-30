@@ -1,7 +1,9 @@
 # RentalsMoviesMvc
 
 
+## Languages and Technologies
 
+Used Jquery datatables with ajax calls 
 
 
 
@@ -30,6 +32,12 @@
          ### Important Note
          * Name of Connection string for sql Client should be the same as the name referenced in ApplicationDbContext
          * e.g (in IdentityModel.Cs) public class ApplicationDbContext : IdentityDbContext
-         This should match name of Connection String
+         This should match name of Connection String.
+
+
+         
+         
+         
+     
           
          
