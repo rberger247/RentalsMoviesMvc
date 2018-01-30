@@ -1,0 +1,44 @@
+﻿
+@model IEnumerable<RentalsMoviesMvc.Models.Movies>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<table id="movies" class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th>Movie</th>
+        <th>Genre</th>
+        <th> Number Available</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            var table = $("#movies").DataTable({
+                ajax: {
+                    url: "/api/Movies",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "name"
+                    },
+                    {
+                        data: "genres.name"
+                    },
+                      {
+                          data: "numberAvailable"
+                      }
+                ]
+            });('.dataTables_filter input').addClass('datatable');;
+        });
+    </script>
+}
+

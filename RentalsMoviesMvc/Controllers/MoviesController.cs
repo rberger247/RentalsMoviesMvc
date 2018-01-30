@@ -23,6 +23,13 @@ namespace RentalsMoviesMvc.Controllers
             _context.Dispose();
         }
 
+        public ViewResult ReadOnlyList()
+        {
+          
+
+            return View("ReadOnlyList");
+        }
+
         public ViewResult New()
         {
             var genres = _context.Genres.ToList();

@@ -8,14 +8,16 @@ namespace RentalsMoviesMvc
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/lib").Include(
-                        "~/Scripts/jquery-{version}.js",
+            bundles.Add(new ScriptBundle("~/bundles/lib").Include(                     
+                           "~/Scripts/jquery-{version}.js",
+                           "~/Scripts/bootstrap.js",
                         "~/scripts/bootbox.js",
                         "~/Scripts/respond.js",
                         "~/scripts/datatables/jquery.datatables.js",
                         "~/scripts/datatables/datatables.bootstrap.js",
-                        "~/scripts/typeahead.bundle.js"
-                
+                        "~/scripts/typeahead.bundle.js",
+                        "~/scripts/toastr.js"
+             
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
