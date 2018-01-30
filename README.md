@@ -3,7 +3,7 @@
 
 ## Languages and Technologies
 
-Used Jquery datatables with ajax calls 
+* Used Jquery datatables with ajax calls 
 
 
 
