@@ -22,3 +22,27 @@ select,
 textarea {
     max-width: 280px;
 }
+label.error {
+    color: red;
+}
+
+.input-validation-error,
+input.error {
+    border: 2px solid red;
+}
+
+#movies{
+   padding-top: 5px;
+    /*background-color: yellow;*/
+
+
+}
+#movies_wrapper{
+
+   padding: 5%;
+}
+#movies_filter{
+
+    margin-right: auto;
+
+}

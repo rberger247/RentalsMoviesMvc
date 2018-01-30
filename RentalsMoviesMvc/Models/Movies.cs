@@ -15,13 +15,18 @@ namespace RentalsMoviesMvc.Models
     public partial class Movies
     {
         public int Id { get; set; }
+
         public byte GenreId { get; set; }
         public System.DateTime ReleaseDate { get; set; }
         public System.DateTime DateAdded { get; set; }
         public Nullable<byte> NumberInStock { get; set; }
         public Nullable<byte> NumberAvailable { get; set; }
         public string Name { get; set; }
-    
-        public virtual Genres Genres { get; set; }
+        
+        public  Genres Genres { get; set; }
+      
+       }
+
     }
-}
+
+
