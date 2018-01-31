@@ -96,7 +96,7 @@
     <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="MembershipTypeId" Type="Byte" Nullable="false" />
     <Property Name="BirthDate" Type="DateTime" Precision="3" />
-    <Property Name="IsSubscribedToNewsletter" Type="Boolean" />
+    <Property Name="IsSubscribedToNewsletter" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="MembershipTypes" Relationship="RentalStoreModel.FK_Customers_MembershipTypes" FromRole="Customers" ToRole="MembershipTypes" />
   </EntityType>
   <EntityType Name="MembershipTypes">
@@ -106,8 +106,6 @@
     <Property Name="MemberhipTypeId" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="MembershipType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Customers" Relationship="RentalStoreModel.FK_Customers_MembershipTypes" FromRole="MembershipTypes" ToRole="Customers" />
-    <NavigationProperty Name="MembershipTypes1" Relationship="RentalStoreModel.FK_MembershipTypes_MembershipTypes" FromRole="MembershipTypes" ToRole="MembershipTypes1" />
-    <NavigationProperty Name="MembershipTypes2" Relationship="RentalStoreModel.FK_MembershipTypes_MembershipTypes" FromRole="MembershipTypes1" ToRole="MembershipTypes" />
   </EntityType>
   <Association Name="FK_AspNetUserRoles_AspNetRoles_RoleId">
     <End Type="RentalStoreModel.AspNetRoles" Role="AspNetRoles" Multiplicity="1">

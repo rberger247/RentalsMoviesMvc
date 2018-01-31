@@ -14,7 +14,7 @@ namespace RentalsMoviesMvc
 
         
             
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");        
 
             routes.MapRoute(
                 name: "Default",
