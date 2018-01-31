@@ -5,7 +5,7 @@
 
 * Uses Jquery datatables with ajax calls
 * Uses Twitter TypeAhead for autoCompletion
-* Uses Bootbox for confirmation messages
+* Uses Bootbox and Toastr for confirmation message
 * uses aspNet roleManger to only allow Authorized users to edit
 
 
