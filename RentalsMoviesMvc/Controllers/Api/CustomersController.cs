@@ -9,6 +9,7 @@ using  System.Data.Entity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using RentalsMoviesMvc.Dto;
 using RentalsMoviesMvc.Models;
+using RentalsMoviesMvc.ViewModels;
 
 namespace RentalsMoviesMvc.Controllers.Api
 {
@@ -39,6 +40,7 @@ namespace RentalsMoviesMvc.Controllers.Api
 
             return Ok(customerDtos);
         }
+
 
         public IHttpActionResult GetCustomer(int id)
         {

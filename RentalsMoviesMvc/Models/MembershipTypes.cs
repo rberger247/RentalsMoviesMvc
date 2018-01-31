@@ -25,7 +25,5 @@ namespace RentalsMoviesMvc.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Customers> Customers { get; set; }
-        public virtual MembershipTypes MembershipTypes1 { get; set; }
-        public virtual MembershipTypes MembershipTypes2 { get; set; }
     }
 }
