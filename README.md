@@ -3,7 +3,11 @@
 
 ## Languages and Technologies
 
-* Used Jquery datatables with ajax calls 
+* Uses Jquery datatables with ajax calls
+* Uses Twitter TypeAhead for autoCompletion
+* Uses Bootbox for confirmation messages
+* uses aspNet roleManger to only allow Authorized users to edit
+
 
 
 
