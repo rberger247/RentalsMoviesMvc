@@ -60,3 +60,4 @@ C:\src\RentalsMoviesMvcSln\RentalsMoviesMvc\bin\Microsoft.AspNet.Identity.Entity
 C:\src\RentalsMoviesMvcSln\RentalsMoviesMvc\obj\Debug\RentalsMoviesMvc.dll
 C:\src\RentalsMoviesMvcSln\RentalsMoviesMvc\obj\Debug\RentalsMoviesMvc.pdb
 C:\src\RentalsMoviesMvcSln\RentalsMoviesMvc\bin\EntityFramework.xml
+C:\src\RentalsMoviesMvcSln\RentalsMoviesMvc\obj\Debug\RentalsMoviesMvc.csprojResolveAssemblyReference.cache
